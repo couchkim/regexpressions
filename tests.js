@@ -14,11 +14,11 @@ test('valid fields are valid', function (current) {
 });
 
 test.only('invalid fields are invalid', function (current) {
-    data.valid.name.map(item => current.false(validation.name(item)));
-    data.valid.phone.map(item => current.false(validation.phone(item)));
-    data.valid.email.map(item => current.false(validation.email(item)));
-    data.valid.address.map(item => current.false(validation.address(item)));
-    data.valid.username.map(item => current.false(validation.username(item)));
-    data.valid.url.map(item => current.false(validation.url(item)));
-    data.valid.ipaddr.map(item => current.false(validation.ipaddr(item)));
+    data.invalid.name.map(item => current.false(validation.name(item)));
+    data.invalid.phone.map(item => current.false(validation.phone(item)));
+    data.invalid.email.map(item => current.false(validation.email(item)));
+    data.invalid.address.map(item => current.false(validation.address(item)));
+    data.invalid.username.map(item => current.false(validation.username(item)));
+    data.invalid.url.map(item => current.false(validation.url(item)));
+    data.invalid.ipaddr.map(item => current.false(validation.ipaddr(item)));
 });

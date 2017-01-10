@@ -25,8 +25,8 @@ module.exports = {
      * and dashes.
      */
     phone: function (input) {
-        let phoneAreaTest = new RegExp('^\(*[0-9]{3}[ \)\-]*[0-9]{3}[ \-]*[0-9]{4}$');
-        let phoneNoAreaTest = new RegExp('^[0-9]{3}[ \-]*[0-9]{4}$');
+        let phoneAreaTest = new RegExp('^\\(*[0-9]{3}[ \\)\\-]*[0-9]{3}[ \\-]*[0-9]{4}$');
+        let phoneNoAreaTest = new RegExp('^[0-9]{3}[ \\-]*[0-9]{4}$');
         if (phoneAreaTest.test(input) === true | phoneNoAreaTest.test(input) === true){
             return true;
         }else{
@@ -79,7 +79,7 @@ module.exports = {
      * may not end with a file name.
      */
     url: function (input) {
-        let urlNameTest = new RegExp('[http][s]*[://][a-zA-Z]+\.[org|com][\/a-zA-Z]*[a-zA-Z]$');
+        let urlNameTest = new RegExp('http[s]*\\:\\/\\/[a-zA-Z]+\\.(org|com)[\\/a-zA-Z]*[a-zA-Z]$');
         if (urlNameTest.test(input) === true){
             return true;
         }else{
@@ -92,7 +92,7 @@ module.exports = {
      * each section. Each section can include from one to three digits.
      */
     ipaddr: function (input) {
-        let ipaddrTest = new RegExp('^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$');
+        let ipaddrTest = new RegExp('^[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}$');
         if (ipaddrTest.test(input) === true){
             return true;
         }else{
