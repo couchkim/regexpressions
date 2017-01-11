@@ -40,7 +40,7 @@ module.exports = {
      * domain name.
      */
     email: function (input) {
-        let emailTest = new RegExp('^[a-zA-z][a-zA-Z0-9\\_\\.]+@[a-zA-Z0-9]+\\.[a-zA-Z]{2,3}$');
+        let emailTest = new RegExp('^[a-zA-z][a-zA-Z0-9\\_\\.]+@[a-zA-Z0-9]+\\.*[a-zA-Z]*\\.[a-zA-Z]{2,3}$');
         if (emailTest.test(input) === true){
             return true;
         }else{
@@ -54,7 +54,7 @@ module.exports = {
      * other information.
      */
     address: function (input) {
-        let addressTest = new RegExp('^[0-9]+[ ]{1}[a-zA-Z]+[ ]{1}(Ave|St|Park|Lane|Blvd)$');
+        let addressTest = new RegExp('^[0-9]+[a-zA-Z ]+(Ave|St|Park|Lane|Blvd)$');
         if (addressTest.test(input) === true){
             return true;
         }else{
@@ -79,7 +79,7 @@ module.exports = {
      * may not end with a file name.
      */
     url: function (input) {
-        let urlNameTest = new RegExp('http[s]*\\:\\/\\/[a-zA-Z]+\\.(org|com)[\\/a-zA-Z]*[a-zA-Z]$');
+        let urlNameTest = new RegExp('http[s]?\\:\\/\\/[a-zA-Z]+\\.(org|com)[\\/a-zA-Z]*(\\.html)?$');
         if (urlNameTest.test(input) === true){
             return true;
         }else{
